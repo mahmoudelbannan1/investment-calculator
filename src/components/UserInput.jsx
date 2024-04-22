@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const UserInput = ({ onChange, userInput }) => {
   return (
     <section id="user-input">
@@ -18,6 +16,7 @@ const UserInput = ({ onChange, userInput }) => {
           <label htmlFor="">Annual Investment</label>
           <input
             type="number"
+            min={0}
             required
             value={userInput.annualInvestment}
             onChange={(e) => onChange("annualInvestment", e.target.value)}
@@ -29,15 +28,17 @@ const UserInput = ({ onChange, userInput }) => {
           <label htmlFor="">Expected Return</label>
           <input
             type="number"
+            min={0}
             required
-            value={userInput.expectedRetun}
-            onChange={(e) => onChange("expectedRetun", e.target.value)}
+            value={userInput.expectedReturn}
+            onChange={(e) => onChange("expectedReturn", e.target.value)}
           />
         </p>
         <p>
           <label htmlFor="">Duration</label>
           <input
             type="number"
+            min={0}
             required
             value={userInput.duration}
             onChange={(e) => onChange("duration", e.target.value)}
